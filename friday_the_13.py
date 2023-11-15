@@ -1,5 +1,7 @@
 # Determine how many Friday the 13th's are possible in a year
 
+import time
+
 regular_year = {
     "Jan": 31,
     "Feb": 28,
@@ -72,7 +74,14 @@ def number_of_fri13_possible():
     return possible_counts
 
 
+# get runtime of program while executing
+start_time = time.time()
+
 list_of_fri13_counts = number_of_fri13_possible()
 print(f"The maximum number of Friday the 13ths is {max(list_of_fri13_counts)}")
 print(f"The minimum number of Friday the 13ths is {min(list_of_fri13_counts)}")
 print(f"Here is the possible counts of the 14 possible years:\n{list_of_fri13_counts}")
+
+end_time = time.time()
+run_time = (end_time - start_time) * 1000
+print(f"Execution time: {run_time} milliseconds\n")
